@@ -3,9 +3,8 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:sparkle/screen/main_screen.dart';
 
 void main() {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {

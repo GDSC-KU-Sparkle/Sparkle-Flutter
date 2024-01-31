@@ -16,6 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: SvgPicture.asset(
           "assets/images/sparkle_appbar_logo.svg",

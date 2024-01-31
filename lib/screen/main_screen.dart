@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sparkle/screen/home_screen.dart';
 import 'package:sparkle/utils/colors.dart';
 
 class MainScreen extends StatefulWidget {
@@ -16,7 +17,11 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('main Screen'),
+        title: SvgPicture.asset(
+          "assets/images/sparkle_appbar_logo.svg",
+          width: 120,
+          height: 30,
+        ),
       ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -57,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       body: <Widget>[
-        Text('Home page'),
+        HomeScreen(),
         Text('map page'),
         Text('my page')
       ][currentPageIndex],

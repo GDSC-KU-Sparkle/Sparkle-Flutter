@@ -49,6 +49,16 @@ flutter:
     - assets/icons/
 
   uses-material-design: true
+  fonts:
+   - family: Galmuri9
+     fonts:
+       - asset: assets/fonts/Galmuri9.ttf
+   - family: Galmuri11
+     fonts:
+       - asset: assets/fonts/Galmuri11.ttf
+   - family: Galmuri14
+     fonts:
+       - asset: assets/fonts/Galmuri14.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

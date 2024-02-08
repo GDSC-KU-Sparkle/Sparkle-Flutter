@@ -23,7 +23,10 @@ class CardBottom extends StatelessWidget {
                 offset: Offset(3, 3), // changes position of shadow
               ),
             ]),
-        child: Text(title),
+        child: Text(
+          title,
+          style: TextStyle(fontFamily: "Galmuri11"),
+        ),
       ),
     );
   }

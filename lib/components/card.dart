@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:sparkle/utils/colors.dart';
 
 class CardBottom extends StatelessWidget {
   final String title;
-  const CardBottom({super.key, required this.title});
+  final String iconFile;
+  const CardBottom({super.key, required this.title, required this.iconFile});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +25,25 @@ class CardBottom extends StatelessWidget {
                 offset: Offset(3, 3), // changes position of shadow
               ),
             ]),
-        child: Text(
-          title,
-          style: TextStyle(fontFamily: "Galmuri11"),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontFamily: "Galmuri11"),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              alignment: Alignment.center,
+              child: Image.asset(
+                iconFile,
+                width: 40,
+                height: 40,
+              ),
+            )
+          ],
         ),
       ),
     );

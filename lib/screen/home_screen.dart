@@ -45,15 +45,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      CardBottom(title: "목표"),
+                      CardBottom(
+                        title: "목표",
+                        iconFile: "assets/icons/goal_fire.png",
+                      ),
                       SizedBox(
                         width: 20,
                       ),
-                      CardBottom(title: "심부름"),
+                      CardBottom(
+                          title: "심부름", iconFile: "assets/icons/errand.png"),
                       SizedBox(
                         width: 20,
                       ),
-                      CardBottom(title: "인벤토리")
+                      CardBottom(
+                          title: "인벤토리", iconFile: "assets/icons/inventory.png")
                     ]),
               ))
         ],

@@ -36,13 +36,10 @@ final GoRouter router = GoRouter(
                   label: '홈',
                 ),
                 NavigationDestination(
-                  icon: Badge(
-                    label: Text('2'),
-                    child: SvgPicture.asset(
-                      "assets/icons/smiling_face.svg",
-                      width: 20,
-                      height: 20,
-                    ),
+                  icon: SvgPicture.asset(
+                    "assets/icons/smiling_face.svg",
+                    width: 20,
+                    height: 20,
                   ),
                   label: '내 정보',
                 ),

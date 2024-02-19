@@ -2,104 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sparkle/utils/colors.dart';
 
-class GoalNewScreen extends StatelessWidget {
-  const GoalNewScreen({super.key});
+class GoalDetailScreen extends StatelessWidget {
+  final String id;
+  const GoalDetailScreen({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              GestureDetector(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Color(PrimaryColor[70]!),
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black87,
-                          spreadRadius: 1,
-                          offset: Offset(2, 2), // changes position of shadow
-                        ),
-                      ]),
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  child: Text(
-                    "새로운 목표",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                onTap: () {
-                  context.go("/goals");
-                },
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              GestureDetector(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black87,
-                          spreadRadius: 1,
-                          offset: Offset(2, 2), // changes position of shadow
-                        ),
-                      ]),
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  child: Text(
-                    "완료한 목표",
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                onTap: () {
-                  context.go("/goals/complete");
-                },
-              ),
-            ],
-          ),
+      child: Container(
+        color: Colors.amber,
+        child: Column(children: [
+          Image.asset("assets/images/example.png"),
           Container(
-            height: 5,
-            margin: EdgeInsets.symmetric(vertical: 15),
-            color: Color(
-              PrimaryColor[50]!,
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(18),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black87,
-                  spreadRadius: 3,
-                  offset: Offset(1, 1), // changes position of shadow
-                ),
-              ],
-            ),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(
-                "케찹 심부름",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              Text("목표명"),
+              Text("자세한 설명 쏼라쏼라"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -170,7 +88,7 @@ class GoalNewScreen extends StatelessWidget {
               )
             ]),
           )
-        ],
+        ]),
       ),
     );
   }

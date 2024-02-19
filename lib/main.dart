@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sparkle/router/routes.dart';
-import 'package:sparkle/screen/main_screen.dart';
 
 void main() {
   runApp(const MyApp());

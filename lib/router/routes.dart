@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sparkle/screen/goal_screen.dart';
 import 'package:sparkle/screen/home_screen.dart';
 import 'package:sparkle/screen/mypage_screen.dart';
 import 'package:sparkle/utils/colors.dart';
@@ -55,9 +56,16 @@ final GoRouter router = GoRouter(
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: "/",
-                builder: (context, state) => HomeScreen(),
-              )
+                  path: "/",
+                  builder: (context, state) => HomeScreen(),
+                  routes: [
+                    GoRoute(
+                      path: "goals",
+                      builder: (context, state) => GoalScreen(
+                        child: Text("test"),
+                      ),
+                    )
+                  ])
             ],
           ),
           StatefulShellBranch(routes: [

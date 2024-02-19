@@ -1,42 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:sparkle/components/card.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  late GoogleMapController mapController;
-
-  final LatLng _center = const LatLng(37.532600, 127.024612);
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-  }
+class GoalScreen extends StatelessWidget {
+  final Widget child;
+  const GoalScreen({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          child: Stack(
+      body: Stack(
         children: [
-          GoogleMap(
-            mapType: MapType.normal,
-            buildingsEnabled: true,
-            initialCameraPosition: CameraPosition(
-              target: _center,
-              zoom: 11.0,
-            ),
-            markers: {
-              const Marker(
-                markerId: MarkerId('Seoul'),
-                position: LatLng(37.532600, 127.024612),
-              )
-            },
+          Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/background-image.png'),
+                    fit: BoxFit.cover)),
+          ),
+          Container(
+            child: child,
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -46,9 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CardBottom(
-                      title: "목표",
+                      title: "목표 선택",
                       iconFile: "assets/icons/goal_fire.png",
-                      route: "goals",
+                      isActive: true,
                     ),
                     SizedBox(
                       width: 20,
@@ -62,9 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: "인벤토리", iconFile: "assets/icons/inventory.png")
                   ]),
             ),
-          )
+          ),
         ],
-      )),
+      ),
     );
   }
 }

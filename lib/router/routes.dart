@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sparkle/screen/goal_complete_screen.dart';
+import 'package:sparkle/screen/goal_new_screen.dart';
 import 'package:sparkle/screen/goal_screen.dart';
 import 'package:sparkle/screen/home_screen.dart';
 import 'package:sparkle/screen/mypage_screen.dart';
@@ -62,8 +64,14 @@ final GoRouter router = GoRouter(
                     GoRoute(
                       path: "goals",
                       builder: (context, state) => GoalScreen(
-                        child: Text("test"),
+                        child: GoalNewScreen(),
                       ),
+                      routes: [
+                        GoRoute(
+                          path: "complete",
+                          builder: (context, state) => GoalCompleteScreen(),
+                        )
+                      ],
                     )
                   ])
             ],

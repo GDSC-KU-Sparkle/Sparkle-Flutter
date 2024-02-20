@@ -36,7 +36,6 @@ class _MyPageScreenState extends State<MyPageScreen> {
       return Scaffold(
         body: Center(
           child: LoginScreen(),
-          // child: CircularProgressIndicator(),
         ),
       );
     }

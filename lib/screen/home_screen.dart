@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sparkle/components/card.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -13,6 +15,24 @@ class _HomeScreenState extends State<HomeScreen> {
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(37.532600, 127.024612);
+  bool isToken = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _autoLoginCheck();
+  }
+
+  void _autoLoginCheck() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? token = prefs.getString('token');
+
+    if (token != null) {
+      setState(() {
+        isToken = true;
+      });
+    }
+  }
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;

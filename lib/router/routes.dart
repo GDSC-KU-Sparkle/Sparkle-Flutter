@@ -7,6 +7,7 @@ import 'package:sparkle/screen/goal_new_screen.dart';
 import 'package:sparkle/screen/goal_screen.dart';
 import 'package:sparkle/screen/home_screen.dart';
 import 'package:sparkle/screen/mypage_screen.dart';
+
 import 'package:sparkle/utils/colors.dart';
 
 final GlobalKey<NavigatorState> rootNavKey = GlobalKey<NavigatorState>();
@@ -85,12 +86,22 @@ final GoRouter router = GoRouter(
                   ])
             ],
           ),
-          StatefulShellBranch(routes: [
-            GoRoute(
-              path: "/mypage",
-              builder: (context, state) => MyPageScreen(),
-            )
-          ])
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: "/mypage",
+                builder: (context, state) => MyPageScreen(),
+              )
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: "/login",
+                builder: (context, state) => MyPageScreen(),
+              )
+            ],
+          ),
         ])
   ],
 );

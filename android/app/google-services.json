@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1030173625945",
+    "firebase_url": "https://practice-90339-default-rtdb.firebaseio.com",
+    "project_id": "practice-90339",
+    "storage_bucket": "practice-90339.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030173625945:android:ff237157cc817f8592eb48",
+        "android_client_info": {
+          "package_name": "com.example.sparkle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6aKGHyFRoPuhHoTKsm8ra9HsuIqqByMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

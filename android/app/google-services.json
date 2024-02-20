@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "222788339668",
+    "project_id": "gdsc-ku-sparkle",
+    "storage_bucket": "gdsc-ku-sparkle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222788339668:android:f9d4e7c5a884ca199e3841",
+        "android_client_info": {
+          "package_name": "com.example.sparkle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSfTBXP81L8ZX3QQiRVhuRKBFj7RJIceo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

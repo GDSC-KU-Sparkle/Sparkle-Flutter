@@ -6,6 +6,7 @@ import 'package:sparkle/screen/goal_detail_screen.dart';
 import 'package:sparkle/screen/goal_new_screen.dart';
 import 'package:sparkle/screen/goal_screen.dart';
 import 'package:sparkle/screen/home_screen.dart';
+import 'package:sparkle/screen/login_screen.dart';
 import 'package:sparkle/screen/mypage_screen.dart';
 
 import 'package:sparkle/utils/colors.dart';
@@ -82,6 +83,10 @@ final GoRouter router = GoRouter(
                               );
                             }),
                       ],
+                    ),
+                    GoRoute(
+                      path: "login",
+                      builder: (context, state) => LoginScreen(),
                     )
                   ])
             ],
@@ -90,14 +95,6 @@ final GoRouter router = GoRouter(
             routes: [
               GoRoute(
                 path: "/mypage",
-                builder: (context, state) => MyPageScreen(),
-              )
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: "/login",
                 builder: (context, state) => MyPageScreen(),
               )
             ],

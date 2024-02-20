@@ -1,11 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sparkle/screen/login_screen.dart';
+import 'package:sparkle/utils/check_login.dart';
 import 'package:sparkle/utils/colors.dart';
 
-class MyPageScreen extends StatelessWidget {
+class MyPageScreen extends StatefulWidget {
   const MyPageScreen({super.key});
 
   @override
+  State<MyPageScreen> createState() => _MyPageScreenState();
+}
+
+class _MyPageScreenState extends State<MyPageScreen> {
+  @override
+  void initState() {
+    super.initState();
+    checkLoginStatus();
+  }
+
+  bool isLogin = false;
+  void checkLoginStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+    if (isLoggedIn) {
+      setState(() {
+        isLogin = true;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    if (!isLogin) {
+      return Scaffold(
+        body: Center(
+          child: LoginScreen(),
+          // child: CircularProgressIndicator(),
+        ),
+      );
+    }
     return Scaffold(
       body: Stack(children: [
         Positioned(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sparkle/components/card.dart';
@@ -13,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Position _currentPosition;
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(37.532600, 127.024612);
@@ -26,6 +28,15 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     checkLoginStatus();
+    _getCurrentLocation();
+  }
+
+  _getCurrentLocation() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      _currentPosition = position;
+    });
   }
 
   bool isLogin = false;
@@ -61,9 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
               zoom: 11.0,
             ),
             markers: {
-              const Marker(
+              Marker(
                 markerId: MarkerId('Seoul'),
-                position: LatLng(37.532600, 127.024612),
+                position: LatLng(
+                    _currentPosition.latitude, _currentPosition.longitude),
               )
             },
           ),

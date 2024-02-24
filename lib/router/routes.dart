@@ -84,10 +84,6 @@ final GoRouter router = GoRouter(
                             }),
                       ],
                     ),
-                    GoRoute(
-                      path: "login",
-                      builder: (context, state) => LoginScreen(),
-                    )
                   ])
             ],
           ),

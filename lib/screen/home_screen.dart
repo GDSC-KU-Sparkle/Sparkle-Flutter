@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isLogin = false;
   void checkLoginStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+    bool isLoggedIn = prefs.getBool('isLogin') ?? false;
 
     if (isLoggedIn) {
       setState(() {

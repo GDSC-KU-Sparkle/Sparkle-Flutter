@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late Position _currentPosition;
+  Position? _currentPosition;
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(37.532600, 127.024612);
@@ -26,9 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    super.initState();
-    checkLoginStatus();
     _getCurrentLocation();
+    checkLoginStatus();
+    super.initState();
   }
 
   _getCurrentLocation() async {
@@ -67,16 +67,18 @@ class _HomeScreenState extends State<HomeScreen> {
           GoogleMap(
             mapType: MapType.normal,
             buildingsEnabled: true,
+            // myLocationEnabled: true,
             initialCameraPosition: CameraPosition(
-              target: _center,
+              target: LatLng(
+                  _currentPosition!.latitude, _currentPosition!.longitude),
               zoom: 11.0,
             ),
             markers: {
               Marker(
-                markerId: MarkerId('Seoul'),
+                markerId: MarkerId('current position'),
                 position: LatLng(
-                    _currentPosition.latitude, _currentPosition.longitude),
-              )
+                    _currentPosition!.latitude, _currentPosition!.longitude),
+              ),
             },
           ),
           Align(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sparkle/screen/errand_screen.dart';
 import 'package:sparkle/screen/goal_complete_screen.dart';
 import 'package:sparkle/screen/goal_detail_screen.dart';
 import 'package:sparkle/screen/goal_new_screen.dart';
@@ -84,6 +85,10 @@ final GoRouter router = GoRouter(
                             }),
                       ],
                     ),
+                    GoRoute(
+                      path: "errand",
+                      builder: (context, state) => ErrandScreen(),
+                    )
                   ])
             ],
           ),

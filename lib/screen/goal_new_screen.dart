@@ -131,6 +131,29 @@ class GoalNewScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: Text("심부름 시작"),
+                                  content: Text("심부름을 시작하시겠습니까?"),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("취소")),
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                          context.go("/errand");
+                                        },
+                                        child: Text("확인")),
+                                  ],
+                                );
+                              });
+                        },
                       ),
                       SizedBox(
                         width: 10,

@@ -27,7 +27,7 @@ def googleMapsApiKey = properties.getProperty('google.maps.apiKey')
 
 android {
     namespace "com.example.sparkle"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {

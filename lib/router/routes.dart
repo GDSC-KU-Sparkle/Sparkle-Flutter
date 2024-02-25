@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sparkle/screen/complete_screen.dart';
+import 'package:sparkle/screen/complete_screen_badge.dart';
 import 'package:sparkle/screen/complete_screen_layout.dart';
+import 'package:sparkle/screen/complete_screen_result.dart';
 import 'package:sparkle/screen/errand_screen.dart';
 import 'package:sparkle/screen/goal_complete_screen.dart';
 import 'package:sparkle/screen/goal_detail_screen.dart';
@@ -92,11 +94,22 @@ final GoRouter router = GoRouter(
                     builder: (context, state) => ErrandScreen(),
                   ),
                   GoRoute(
-                    path: "done",
-                    builder: (context, state) => CompleteScreenLayout(
-                      child: CompleteScreen(),
-                    ),
-                  ),
+                      path: "done",
+                      builder: (context, state) => CompleteScreenLayout(
+                            child: CompleteScreen(),
+                          ),
+                      routes: [
+                        GoRoute(
+                            path: "result",
+                            builder: (context, state) => CompleteScreenLayout(
+                                  child: CompleteScreenResult(),
+                                )),
+                        GoRoute(
+                            path: "badge",
+                            builder: (context, state) => CompleteScreenLayout(
+                                  child: CompleteScreenBadge(),
+                                )),
+                      ]),
                 ],
               )
             ],

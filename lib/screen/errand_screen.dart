@@ -223,8 +223,10 @@ class _ErrandScreenState extends State<ErrandScreen> {
                               width: 20,
                             ),
                             CardBottom(
-                                title: "인벤토리",
-                                iconFile: "assets/icons/inventory.png")
+                              title: "인벤토리",
+                              iconFile: "assets/icons/inventory.png",
+                              route: "inventory",
+                            ),
                           ],
                         ),
                       ),

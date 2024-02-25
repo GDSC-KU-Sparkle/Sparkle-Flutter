@@ -1,16 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sparkle/utils/colors.dart';
 
-class CompleteScreen extends StatefulWidget {
-  const CompleteScreen({super.key});
+class CompleteScreenBadge extends StatefulWidget {
+  const CompleteScreenBadge({super.key});
 
   @override
-  State<CompleteScreen> createState() => _CompleteScreenState();
+  State<CompleteScreenBadge> createState() => _CompleteScreenBadgeState();
 }
 
-class _CompleteScreenState extends State<CompleteScreen> {
+class _CompleteScreenBadgeState extends State<CompleteScreenBadge> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,34 +35,34 @@ class _CompleteScreenState extends State<CompleteScreen> {
           children: [
             Column(children: [
               Text(
-                "목표 달성!",
+                "뱃지 획득!",
                 style: TextStyle(
                   fontSize: 20,
                 ),
               ),
               Container(
-                height: 200,
+                margin: EdgeInsets.symmetric(vertical: 10),
                 width: double.infinity,
-                child: Image.asset(
-                  "assets/images/example.png",
-                  fit: BoxFit.cover,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/icons/route_angel.png",
+                    ),
+                    Container(
+                        margin: EdgeInsets.symmetric(vertical: 20),
+                        child: Text("길찾기 요정")),
+                    Text("올바른 경로를 통한 미션 수행 3회 달성!"),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "케찹 심부름",
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              SizedBox(
-                height: 10,
               ),
               GestureDetector(
                 onTap: () {
-                  context.go("/done/result");
+                  context.pop();
+                  context.go("/mypage");
                 },
                 child: Container(
                   padding: EdgeInsets.symmetric(
@@ -80,9 +81,15 @@ class _CompleteScreenState extends State<CompleteScreen> {
                           offset: Offset(2, 2), // changes position of shadow
                         ),
                       ],
-                      color: Color(PrimaryColor[100]!),
+                      color: Colors.red,
                       borderRadius: BorderRadius.circular(15)),
-                  child: Text("다음"),
+                  child: Text(
+                    "확인",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               )
             ])

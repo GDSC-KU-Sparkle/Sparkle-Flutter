@@ -1,16 +1,107 @@
-# sparkle
+## Main Feature Specification in Firebase🛠️
 
-A new Flutter project.
+- [x] Authentication
+- [x] Login
+- [x] Generate random errand things
+- [x] Store user data in firebase real time database
+- [x] Store errand goal data in firebase real time database
+- [x] Store badge data in firebase real time database
+- [x] CRUD functions
+- [x] Calculate walking distance function
+- [x] Calculate whether user can get a badge
+- [x] Total # goal
+- [x] Total # badge
+- [x] # weekly goal
 
-## Getting Started
+## Main Feature Specification in Flutter🛠️
 
-This project is a starting point for a Flutter application.
+- [x]
 
-A few resources to get you started if this is your first Flutter project:
+### something to write⚙️
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [x]
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## What We Have To Do🛠️
+
+### Real Time Streaming Service⚙️
+
+- need further study about firebase hosting service
+
+```## Main Feature Specification in Firebase🛠️
+- [x] Authentication
+- [x] Login
+- [x] Generate random errand things
+- [x] Store user data in firebase real time database
+- [x] Store errand goal data in firebase real time database
+- [x] Store badge data in firebase real time database
+- [x] CRUD functions
+- [x] Calculate walking distance function
+- [x] Calculate whether user can get a badge
+- [x] Total # goal
+- [x] Total # badge
+- [x] # weekly goal
+
+## Main Feature Specification in Flutter🛠️
+- [x]
+
+### something to write⚙️
+- [x]
+
+
+## What We Have To Do🛠️
+### Real Time Streaming Service⚙️
+
+- need further study about firebase hosting service
+```
+
+web/app hosting service with real time streaming
+
+```
+- some network knowledges
+
+```
+
+how can we match routing table while user walk around
+
+```
+
+### Google vision API⚙️
+- with GCP, we can use google vision API
+```
+
+By using this API, we can provide user convenience about matching whether things that user get in the goal place is same as final errand goal
+
+```
+
+### Feedback from real world users⚙️
+- After distribute our app, SPARKLE, we need to gather some users and then get some feedbacks
+```
+
+Through this development process, development can be more focused on UI/UX
+
+```
+
+web/app hosting service with real time streaming
+```
+
+- some network knowledges
+
+```
+how can we match routing table while user walk around
+```
+
+### Google vision API⚙️
+
+- with GCP, we can use google vision API
+
+```
+By using this API, we can provide user convinience about matching whether things that user get in the goal place is same as final errand goal
+```
+
+### Feedback from real world users⚙️
+
+- After distribute our app, SPARKLE, we need to gather soem users and then get some feedbacks
+
+```
+Through this development process, development can be more focused on UI/UX
+```

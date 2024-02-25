@@ -35,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {});
     return Scaffold(
       body: Column(
         children: [

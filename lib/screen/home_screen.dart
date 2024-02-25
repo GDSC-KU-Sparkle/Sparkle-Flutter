@@ -26,17 +26,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    _getCurrentLocation();
     checkLoginStatus();
+    _getCurrentLocation();
     super.initState();
   }
 
   _getCurrentLocation() async {
+    LocationPermission permission = await Geolocator.requestPermission();
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
     setState(() {
       _currentPosition = position;
     });
+
+    print(position);
   }
 
   bool isLogin = false;
@@ -53,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // _getCurrentLocation();
     if (!isLogin) {
       return Scaffold(
         body: Center(

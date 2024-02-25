@@ -32,6 +32,8 @@ migrate_working_dir/
 /build/
 
 lib/firebase_options.dart
+
+/lib/variables/
 # Symbolication related
 app.*.symbols
 

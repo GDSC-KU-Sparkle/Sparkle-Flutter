@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:sparkle/components/card.dart';
@@ -16,14 +18,7 @@ class ErrandScreen extends StatefulWidget {
 }
 
 class _ErrandScreenState extends State<ErrandScreen> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    getCurrentLocation();
-    timerTest();
-
-    super.initState();
-  }
+  BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
 
   final Completer<GoogleMapController> _controller = Completer();
   LocationData? currentLocation;
@@ -58,18 +53,44 @@ class _ErrandScreenState extends State<ErrandScreen> {
   void timerTest() {
     Timer(Duration(milliseconds: 700), () {
       print("reassemble");
+      setState(() {});
     });
   }
 
-  // static const LatLng sourceLocation = LatLng(37.51148310935, 127.06033711446);
+  static const LatLng sourceLocation = LatLng(37.51148310935, 127.06033711446);
   static const LatLng destination = LatLng(37.510257428761, 127.04391561527);
 
   @override
+  void initState() {
+    // TODO: implement initState
+    getCurrentLocation();
+    timerTest();
+    addCustomIcon();
+    print("init state ");
+
+    super.initState();
+  }
+
+  void addCustomIcon() {
+    BitmapDescriptor.fromAssetImage(
+            const ImageConfiguration(), "assets/Location_marker.png")
+        .then(
+      (icon) {
+        setState(() {
+          markerIcon = icon;
+        });
+      },
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: currentLocation == null
-          ? Center(child: Text("Loading"))
-          : Stack(
+    return currentLocation == null
+        ? Center(
+            child: CircularProgressIndicator(),
+          )
+        : Scaffold(
+            body: Stack(
               children: [
                 GoogleMap(
                   initialCameraPosition: CameraPosition(
@@ -82,6 +103,9 @@ class _ErrandScreenState extends State<ErrandScreen> {
                       markerId: const MarkerId("currentLocation"),
                       position: LatLng(currentLocation!.latitude!,
                           currentLocation!.longitude!),
+                      icon: BitmapDescriptor.defaultMarkerWithHue(
+                        BitmapDescriptor.hueBlue,
+                      ),
                     ),
                     const Marker(
                       markerId: MarkerId("destination"),
@@ -96,7 +120,45 @@ class _ErrandScreenState extends State<ErrandScreen> {
                   alignment: Alignment.topCenter,
                   child: GestureDetector(
                       onTap: () {
-                        print("mission complete");
+                        showDialog(
+                            context: context,
+                            // barrierColor: Colors.transparent,
+                            barrierDismissible: false,
+                            builder: (context) => Dialog(
+                                  child: Container(
+                                    padding: EdgeInsets.all(20),
+                                    height: 150,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "심부름을 완료했습니다!",
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                            Text(
+                                              "결과 보러 가볼까요?",
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                            context.go("/done");
+                                          },
+                                          child: Text("확인"),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ));
                       },
                       child: Container(
                         margin: EdgeInsets.only(top: 10),
@@ -171,6 +233,6 @@ class _ErrandScreenState extends State<ErrandScreen> {
                 )
               ],
             ),
-    );
+          );
   }
 }

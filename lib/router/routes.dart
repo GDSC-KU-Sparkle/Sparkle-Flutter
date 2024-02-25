@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sparkle/screen/complete_screen.dart';
+import 'package:sparkle/screen/complete_screen_layout.dart';
 import 'package:sparkle/screen/errand_screen.dart';
 import 'package:sparkle/screen/goal_complete_screen.dart';
 import 'package:sparkle/screen/goal_detail_screen.dart';
@@ -62,34 +64,41 @@ final GoRouter router = GoRouter(
           StatefulShellBranch(
             routes: [
               GoRoute(
-                  path: "/",
-                  builder: (context, state) => HomeScreen(),
-                  routes: [
-                    GoRoute(
-                      path: "goals",
-                      builder: (context, state) => GoalScreen(
-                        child: GoalNewScreen(),
-                      ),
-                      routes: [
-                        GoRoute(
-                          path: "complete",
-                          builder: (context, state) => GoalCompleteScreen(),
-                        ),
-                        GoRoute(
-                            path: ":id",
-                            builder: (context, state) {
-                              final id = state.pathParameters['id'];
-                              return GoalScreen(
-                                child: GoalDetailScreen(id: id ?? ""),
-                              );
-                            }),
-                      ],
+                path: "/",
+                builder: (context, state) => HomeScreen(),
+                routes: [
+                  GoRoute(
+                    path: "goals",
+                    builder: (context, state) => GoalScreen(
+                      child: GoalNewScreen(),
                     ),
-                    GoRoute(
-                      path: "errand",
-                      builder: (context, state) => ErrandScreen(),
-                    )
-                  ])
+                    routes: [
+                      GoRoute(
+                        path: "complete",
+                        builder: (context, state) => GoalCompleteScreen(),
+                      ),
+                      GoRoute(
+                          path: ":id",
+                          builder: (context, state) {
+                            final id = state.pathParameters['id'];
+                            return GoalScreen(
+                              child: GoalDetailScreen(id: id ?? ""),
+                            );
+                          }),
+                    ],
+                  ),
+                  GoRoute(
+                    path: "errand",
+                    builder: (context, state) => ErrandScreen(),
+                  ),
+                  GoRoute(
+                    path: "done",
+                    builder: (context, state) => CompleteScreenLayout(
+                      child: CompleteScreen(),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
           StatefulShellBranch(

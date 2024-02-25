@@ -6,6 +6,7 @@ import 'package:location/location.dart';
 import 'package:sparkle/components/card.dart';
 import 'package:sparkle/components/dialogHelpCard.dart';
 import 'package:sparkle/components/dialogPromiseCard.dart';
+import 'package:sparkle/utils/colors.dart';
 
 class ErrandScreen extends StatefulWidget {
   const ErrandScreen({super.key});
@@ -90,6 +91,35 @@ class _ErrandScreenState extends State<ErrandScreen> {
                   onMapCreated: (mapController) {
                     _controller.complete(mapController);
                   },
+                ),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: GestureDetector(
+                      onTap: () {
+                        print("mission complete");
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(top: 10),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        decoration: BoxDecoration(
+                          color: Color(PrimaryColor[100]!),
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(PrimaryColor[20]!),
+                              spreadRadius: 1,
+                              offset: Offset(3, 3),
+                            ),
+                          ],
+                        ),
+                        child: Text("완료",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.grey[800],
+                            )),
+                      )),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,

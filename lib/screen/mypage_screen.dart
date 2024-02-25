@@ -69,20 +69,98 @@ class _MyPageScreenState extends State<MyPageScreen> {
                 children: [
                   Column(
                     children: [
-                      Text("3"),
+                      Image.asset(
+                        "assets/images/mypage_goal.png",
+                        width: 50,
+                        height: 50,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "3",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontFamily: "Galmuri9",
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text("개")
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Text("달성한 목표"),
                     ],
                   ),
                   Column(
                     children: [
-                      Text("3"),
+                      Image.asset(
+                        "assets/images/mypage_errand.png",
+                        width: 50,
+                        height: 50,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "2",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontFamily: "Galmuri9",
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text("개")
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Text("주간 심부름"),
                     ],
                   ),
                   Column(
                     children: [
-                      Text("3"),
-                      Text("걸은 거리 "),
+                      Image.asset(
+                        "assets/images/mypage_distance.png",
+                        width: 50,
+                        height: 50,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "5",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontFamily: "Galmuri9",
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text("km")
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("걸은 거리"),
                     ],
                   ),
                 ],
@@ -90,87 +168,65 @@ class _MyPageScreenState extends State<MyPageScreen> {
               Divider(
                 content: "업적 뱃지",
               ),
-
-              // Expanded(
-
-              //   child: GridView.builder(
-              //     itemCount: 10,
-              //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              //         crossAxisCount: 3,
-              //         crossAxisSpacing: 10,
-              //         mainAxisSpacing: 10),
-              //     itemBuilder: (context, index) {
-              //       return Container(
-              //         color: Colors.amber,
-              //         alignment: Alignment.center,
-              //         child: Text("$index"),
-              //       );
-              //     },
-              //   ),
-              // ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          children: [
+                            Image.asset(
+                              "assets/images/precise_target.png",
+                              width: 95,
+                              height: 95,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "정확한 과녁",
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Image.asset(
+                              "assets/images/route_angel.png",
+                              width: 95,
+                              height: 95,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "길찾기 요정",
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Image.asset(
+                              "assets/images/route_warrior.png",
+                              width: 95,
+                              height: 95,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "길찾기 용사",
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
-          // child: Container(
-          //   padding: EdgeInsets.symmetric(horizontal: 20),
-          //   child: Column(
-          //     children: [
-          //       Container(
-          //         margin: EdgeInsets.only(top: 60),
-          //         child: Image.asset("assets/images/profile-test.png"),
-          //       ),
-          //       SizedBox(
-          //         height: 10,
-          //       ),
-          //       Text(
-          //         "김민재",
-          //         style: TextStyle(fontSize: 30),
-          //       ),
-          //       Divider(content: "주간 활동"),
-          //       Row(
-          //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //         children: [
-          //           Column(
-          //             children: [
-          //               Text("3"),
-          //               Text("달성한 목표"),
-          //             ],
-          //           ),
-          //           Column(
-          //             children: [
-          //               Text("3"),
-          //               Text("주간 심부름"),
-          //             ],
-          //           ),
-          //           Column(
-          //             children: [
-          //               Text("3"),
-          //               Text("걸은 거리 "),
-          //             ],
-          //           ),
-          //         ],
-          //       ),
-          //       Divider(
-          //         content: "업적 뱃지",
-          //       ),
-          //       Expanded(
-          //         child: GridView.builder(
-          //           itemCount: 10,
-          //           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //               crossAxisCount: 3,
-          //               crossAxisSpacing: 10,
-          //               mainAxisSpacing: 10),
-          //           itemBuilder: (context, index) {
-          //             return Container(
-          //               color: Colors.amber,
-          //               alignment: Alignment.center,
-          //               child: Text("$index"),
-          //             );
-          //           },
-          //         ),
-          //       )
-          //     ],
-          //   ),
-          // ),
         ),
       ]),
     );

@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
             initialCameraPosition: CameraPosition(
               target: LatLng(
                   _currentPosition!.latitude, _currentPosition!.longitude),
-              zoom: 11.0,
+              zoom: 13.5,
             ),
             markers: {
               Marker(

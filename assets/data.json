@@ -1,0 +1,186 @@
+{
+  "users": {
+    "jay": {
+      "date_of_birth": "950627",
+      "name": "오종민",
+      "level": "1",
+      "email": "277ipjk53@gmail.com",
+      "password": "1234",
+      "profile_image": "jay_profile_image",
+      "mission_list": {
+        "mission1": true,
+        "mission2": true,
+        "mission3": true,
+        "mission4": false
+      },
+      "mission_count": "3",
+      "mission_weekly": "1",
+      "walk_distance": "1000",
+      "badge": {
+        "badge1": true,
+        "badge2": true,
+        "badge3": true
+      }
+    },
+    "jayson": {
+      "date_of_birth": "980311",
+      "name": "박성철",
+      "level": "1",
+      "email": "v0voun127@korea.ac.kr",
+      "password": "1234",
+      "profile_image": "jayson_profile_image",
+      "mission_list": {
+        "mission1": true,
+        "mission2": true,
+        "mission3": true,
+        "mission4": false
+      },
+      "mission_count": "3",
+      "mission_weekly": "1",
+      "walk_distance": "1000",
+      "badge": {
+        "badge1": true,
+        "badge2": true,
+        "badge3": true
+      }
+    },
+    "masterWee": {
+      "date_of_birth": "980425",
+      "name": "명재위",
+      "level": "5",
+      "email": "masterWee@korea.ac.kr",
+      "password": "1234",
+      "profile_image": "masterWee_profile_image",
+      "mission_list": {
+        "mission1": true,
+        "mission2": true,
+        "mission3": true,
+        "mission4": true
+      },
+      "mission_count": "4",
+      "mission_weekly": "2",
+      "walk_distance": "2500",
+      "badge": {
+        "badge1": true,
+        "badge2": true,
+        "badge3": true,
+        "badge4": true,
+        "badge5": true
+      }
+    },
+    "eunki": {
+      "date_of_birth": "980811",
+      "name": "김은기",
+      "level": "4",
+      "email": "eunkidanyang@korea.ac.kr",
+      "password": "1234",
+      "profile_image": "eunki_profile_image",
+      "mission_list": {
+        "mission1": true,
+        "mission2": true,
+        "mission3": true,
+        "mission4": false
+      },
+      "mission_count": "3",
+      "mission_weekly": "1",
+      "walk_distance": "1000",
+      "badge": {
+        "badge1": true,
+        "badge2": true,
+        "badge3": true
+      }
+    },
+    "sy_memorial": {
+      "date_of_birth": "970821",
+      "name": "이수연",
+      "level": "2",
+      "email": "syMemorial@korea.ac.kr",
+      "password": "1234",
+      "profile_image": "sy_profile_image",
+      "mission_list": {
+        "mission1": true,
+        "mission2": true,
+        "mission3": true,
+        "mission4": false
+      },
+      "mission_count": "3",
+      "mission_weekly": "1",
+      "walk_distance": "1000",
+      "badge": {
+        "badge1": true,
+        "badge2": true,
+        "badge3": true
+      }
+    }
+  },
+  "Badge": {
+    "badge1": {
+      "name": "badge1",
+      "description": "badge1 description",
+      "image": "badge1 image"
+    },
+    "badge2": {
+      "name": "badge2",
+      "description": "badge2 description",
+      "image": "badge2 image"
+    },
+    "badge3": {
+      "name": "badge3",
+      "description": "badge3 description",
+      "image": "badge3 image"
+    },
+    "badge4": {
+      "name": "badge4",
+      "description": "badge4 description",
+      "image": "badge4 image"
+    },
+    "badge5": {
+      "name": "badge5",
+      "description": "badge5 description",
+      "image": "badge5 image"
+    },
+    "badge6": {
+      "name": "badge6",
+      "description": "badge6 description",
+      "image": "badge6 image"
+    }
+  },
+  "goal": {
+    "goal1": {
+      "name": "goal1",
+      "description": "goal1 description",
+      "image": "goal1 image",
+      "expected_time": "22"
+    },
+    "goal2": {
+      "name": "goal2",
+      "description": "goal2 description",
+      "image": "goal2 image",
+      "expected_time": "23"
+    },
+    "goal3": {
+      "name": "goal3",
+      "description": "goal3 description",
+      "image": "goal3 image",
+      "expected_time": "24"
+    },
+    "goal4": {
+      "name": "goal4",
+      "description": "goal4 description",
+      "image": "goal4 image",
+      "expected_time": "17"
+    },
+    "goal5": {
+      "name": "goal5",
+      "description": "goal5 description",
+      "image": "goal5 image",
+      "expected_time": "35"
+    },
+    "goal6": {
+      "name": "goal6",
+      "description": "goal6 description",
+      "image": "goal6 image",
+      "expected_time": "42"
+    }
+  }
+}

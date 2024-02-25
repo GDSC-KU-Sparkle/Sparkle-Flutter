@@ -11,6 +11,7 @@ import 'package:sparkle/screen/goal_detail_screen.dart';
 import 'package:sparkle/screen/goal_new_screen.dart';
 import 'package:sparkle/screen/goal_screen.dart';
 import 'package:sparkle/screen/home_screen.dart';
+import 'package:sparkle/screen/inventory_screen.dart';
 import 'package:sparkle/screen/login_screen.dart';
 import 'package:sparkle/screen/mypage_screen.dart';
 
@@ -93,6 +94,9 @@ final GoRouter router = GoRouter(
                     path: "errand",
                     builder: (context, state) => ErrandScreen(),
                   ),
+                  GoRoute(
+                      path: "inventory",
+                      builder: (context, state) => InventoryScreen()),
                   GoRoute(
                       path: "done",
                       builder: (context, state) => CompleteScreenLayout(

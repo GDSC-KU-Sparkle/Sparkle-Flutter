@@ -30,6 +30,7 @@ class GoalScreen extends StatelessWidget {
                       title: "목표 선택",
                       iconFile: "assets/icons/goal_fire.png",
                       isActive: true,
+                      isActiveText: "목표 설정",
                     ),
                     SizedBox(
                       width: 20,

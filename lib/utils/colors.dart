@@ -5,5 +5,6 @@ Map<int, int> PrimaryColor = {
   60: 0xFF9A82DB,
   70: 0xFFB69DF8,
   80: 0xFFD0BCFF,
-  100: 0xFFD0BCFF
+  100: 0xFFD0BCFF,
+  120: 0xFFF6EDFF,
 };

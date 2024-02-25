@@ -14,10 +14,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Position? _currentPosition;
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(37.532600, 127.024612);
+  Position? _currentPosition;
 
   @override
   void _onMapCreated(GoogleMapController controller) {

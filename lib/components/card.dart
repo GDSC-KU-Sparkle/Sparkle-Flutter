@@ -7,12 +7,16 @@ class CardBottom extends StatelessWidget {
   final String iconFile;
   final String route;
   final bool isActive;
+  final String isActiveText;
+  final bool clickable;
   const CardBottom({
     super.key,
     required this.title,
     required this.iconFile,
     this.route = "",
     this.isActive = false,
+    this.isActiveText = "",
+    this.clickable = true,
   });
 
   @override
@@ -20,6 +24,9 @@ class CardBottom extends StatelessWidget {
     return Expanded(
       child: GestureDetector(
         onTap: () {
+          if (!clickable) {
+            return;
+          }
           if (route.isNotEmpty) {
             context.go("/$route");
           }
@@ -43,7 +50,7 @@ class CardBottom extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title,
+                isActive ? isActiveText : title,
                 style: TextStyle(
                   fontFamily: "Galmuri11",
                   color: isActive ? Colors.white : Colors.black,
